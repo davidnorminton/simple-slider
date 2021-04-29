@@ -11,9 +11,6 @@ main {
 	position: relative;
 	overflow: hidden;
 }
-.slider {
-  transform-style: preserve-3d;
-}
 .slide {
 	position: absolute;
 	transform: translateX(100%);
@@ -42,12 +39,8 @@ main {
 	animation-fill-mode: forwards
 }
 @keyframes movementIn {
-	0% {
-		transform: translateX(100%);
-	}
-	100% {
-		transform: translateX(0);
-	}
+	0% { transform: translateX(100%); }
+	100% { transform: translateX(0); }
 }
 .moveOut {
 	animation-name: movementOut;
@@ -55,10 +48,32 @@ main {
 	animation-fill-mode: forwards
 }
 @keyframes movementOut {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-100%); }
+}
+.prevButton {
+	position: absolute;
+	left: 10px;
+	top: calc(50% - 50px);
+}
+.nextButton {
+	position: absolute;
+	right: 10px;	
+	top: calc(50% - 50px);
+}
+.sliderNav {
+	background: #6f6868ab;
+	border-radius: 50%;
+	color: #fff;
+    padding: 10px 25px;
+	font-size: 3rem;
+	display: none;
+	cursor: pointer;
+}
+.sliderNav:hover {
+	background: #8c8484ab;
+	transition: all .3 linear;
+}
+.slider_wrapper:hover > .sliderNav {
+	display: inline-block;
 }
